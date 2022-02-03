@@ -9,11 +9,16 @@ How to document the state of individual tables to prioritise which work on
 
 Example: https://github.com/obophenotype/asct-b_validation/issues/31
 
-## Issue triage:
+## Per table Issue triage:
 
-How to structure a ticket using reports to document and prioritise different individual issues identified by the reports
+How to structure a ticket using reports to document and prioritise different individual issues identified by the reports on a single table
 
 Example: https://github.com/obophenotype/asct-b_validation/issues/26
+
+To start a new issue triage comment:
+
+1. Copy and paste the table from logs/class\_{organ}\_log.tsv into a ticket comment.  Each line is an invalid relationship (see [reference doc](#class\_{organ}\_log.tsv) for details). This should automatically format, but some editing might be needed to align columns.  Add an additional column 'n' to number issues for identification in subsequent ticket test.
+2. Write notes roughly categorizing issues (identified by number from table), linking to new CL/Uberon tickets where appropriate.
 
 ### Types of errors:
 
@@ -60,9 +65,11 @@ These appear as red edges in the graphs.
    CL:0011005 | GABAergic interneuron | GABAergic interneuron | CL:0000561 | Amacrine cell | Amacrine Cell
    CL:0011005 | GABAergic interneuron | GABAergic interneuron | UBERON:0001791 | inner nuclear layer of retina | inner nuclear layer of retina
 
-\* nonvalidating = 
+\* nonvalidating means does not validate against the following relationships *post reasoning*.  i.e. the relationship validated may not be directly stated in the source ontology, but is safely inferred.
 AS:AS  - subClassOf; part_of; connected_to; overlaps (only checked if part_of is not true).
-AS:CT  - part_of
-CT:CT  - subClassOf; develops_from. # Should we even be doing this?!
+AS:CT  - part_of - we also test for has_part (reversing subject and object); perhaps controversially, we validate has_part if some cell that if some cell for which part_of is true is a subclass of the type in the table.
+CT:CT  - subClassOf; develops_from. # Should we even be doing this??!!  
 
 ## Graphs
+
+graph
