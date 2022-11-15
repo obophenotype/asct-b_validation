@@ -70,6 +70,7 @@ Example of the eye graph:
 
 
 ## Reports
+https://github.com/hubmapconsortium/ccf-validation-tools/tree/master/reports
 
 A folder containing weekly status report summary table for all ASCT+B tables. The table reports: table (name of ASCT+B table), number_of_AS-AS_relationships, percent_invalid_AS-AS_relationship, percent_indirect_AS-AS_relationship, number_of_CT-CT_relationships, percent_invalid_CT-CT_relationship,	percent_indirect_CT-CT_relationship,	number_of_CT-AS_relationships,	percent_invalid_CT-AS_relationship
 
